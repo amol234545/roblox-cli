@@ -5,6 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   # This workflow contains a single job called "build"
   build-win:
