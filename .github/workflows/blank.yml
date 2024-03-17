@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+defaults:
+  run:
+    working-directory: ./
 jobs:
   # This workflow contains a single job called "build"
   build-win:
@@ -31,6 +34,7 @@ jobs:
             "aftman add lune-org/lune"
       - name: Bulid .EXE
         run: |
+            "cd bloxpackage"
             "darklua process main.luau bulit.luau"
             "lune bulid bulit.luau"
       - name: Read version file
