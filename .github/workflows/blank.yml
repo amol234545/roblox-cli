@@ -35,11 +35,16 @@ jobs:
         uses: codacy/git-version@2.4.0
         with:
           dev-branch: "master"
+      - name: Read version file
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "version.txt"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
           draft: true
-          tag: ""
+          tag: "${ steps.read_file.outputs.contents }"
           artifacts: "bulit.exe"
           
         
