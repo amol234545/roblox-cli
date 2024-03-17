@@ -19,7 +19,7 @@ jobs:
       - name: Download Aftman
         uses: robinraju/release-downloader@v1.9
         with:
-          repository: "https://github.com/LPGhatguy/aftman"
+          repository: "LPGhatguy/aftman"
           latest: true
           extract: true
       - name: Install Aftman and darklua
