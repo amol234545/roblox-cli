@@ -39,11 +39,12 @@ jobs:
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
+      - run: "tree"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
           draft: true
-          tag: "${ steps.read_file.outputs.result }"
+          tag: ${ steps.read_file.outputs.result }
           artifacts: "bulit.exe"
           
         
