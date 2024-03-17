@@ -25,8 +25,7 @@ jobs:
           extract: true
       - name: Install Aftman and packages
         run: |
-            "cwd"
-            "./aftman self-install"
+            "cd $GITHUB_WORKSPACE"
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
       - name: Bulid .EXE
