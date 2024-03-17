@@ -3,5 +3,8 @@
 "luau-lsp.require.directoryAliases": {
     "@lune/": "~/.lune/.typedefs/0.8.2/"
 },
+"[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.luau-lsp"
+},
 "files.autoSave": "onFocusChange"
 }
