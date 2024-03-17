@@ -30,6 +30,7 @@ jobs:
       - name: Bulid .EXE
         working-directory: "${{env.GITHUB_WORKSPACE}}"
         run: |
+            cd ${{env.GITHUB_WORKSPACE}}
             "mkdir bulid"
             "cd bulid"
             "darklua process main.luau bulit.luau"
@@ -46,6 +47,6 @@ jobs:
         with:
           draft: true
           tag: ${{steps.read_file.outputs.result}}
-          artifacts: "bulit.exe"
+          artifacts: "${{env.GITHUB_WORKSPACE}}\\bulit.exe"
           
         
