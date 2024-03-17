@@ -26,6 +26,7 @@ jobs:
           extract: true
       - name: Install Aftman and packages
         run: |
+            "cwd"
             "./aftman self-install"
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
