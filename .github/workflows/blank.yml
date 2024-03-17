@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+defaults:
+  run:
+    working-directory: D:\\a\\bloxPackage\\bloxPackage
 jobs:
   # This workflow contains a single job called "build"
   build-win:
@@ -29,18 +32,17 @@ jobs:
             "aftman add lune-org/lune"
       - name: Bulid .EXE
         run: |
-            cd D:\\a\\bloxPackage\\bloxPackage
             "mkdir bulid"
             "cd bulid"
-            "darklua process main.luau bulit.luau"
-            "lune bulid bulit.luau"
+            "darklua process main.luau bulid\\bulit.luau"
+            "lune bulid bulid\\bulit.luau"
       - name: Read version file
         uses: actions/github-script@v7
         id: read_file
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "dir D:\\a\\bloxPackage\\bloxPackage"
+      - run: "dir"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
