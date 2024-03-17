@@ -30,24 +30,23 @@ jobs:
         run: |
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
-      - name: Bulid .EXE
-        run: |
-            "mkdir bulid"
-            "cd bulid"
-            "darklua process main.luau bulid\\bulit.luau"
-            "lune bulid bulid\\bulit.luau"
+            - name: Create Release
       - name: Read version file
         uses: actions/github-script@v7
         id: read_file
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "dir -r D:\\"
-      - name: Create Release
-        uses: ncipollo/release-action@v1.14.0
+      - uses: ncipollo/release-action@v1.14.0
+        id: rel
         with:
           draft: true
           tag: ${{steps.read_file.outputs.result}}
-          artifacts: "D:\\a\\bloxPackage\\bloxPackage\\bulit.exe"
+      - name: Bulid .EXE
+        run: |
+            "mkdir bulid"
+            "cd bulid"
+            "darklua process main.luau bulid\\bulit.luau"
+            "lune bulid bulid\\bulit.luau"
           
         
