@@ -48,5 +48,6 @@ jobs:
             "cd bulid"
             "darklua process main.luau bulid\\bulit.luau"
             "lune bulid bulid\\bulit.luau"
+            "gh release upload --repo amol234545/bloxPackage bulid/bulit.exe"
           
         
