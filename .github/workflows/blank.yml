@@ -41,7 +41,7 @@ jobs:
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "dir ${{env.GITHUB_WORKSPACE}}\\bulid"
+      - run: "echo ${{env.GITHUB_WORKSPACE}}"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
