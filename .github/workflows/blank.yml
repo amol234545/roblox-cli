@@ -42,7 +42,7 @@ jobs:
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "dir -r"
+      - run: "dir D:\\"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
