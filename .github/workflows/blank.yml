@@ -28,8 +28,10 @@ jobs:
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
       - name: Bulid .EXE
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: "${{env.GITHUB_WORKSPACE}}"
         run: |
+            "mkdir bulid"
+            "cd bulid"
             "darklua process main.luau bulit.luau"
             "lune bulid bulit.luau"
             "dir"
