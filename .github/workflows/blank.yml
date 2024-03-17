@@ -30,7 +30,7 @@ jobs:
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
       - name: Bulid .EXE
-        working-directory: ./bloxpackage
+        working-directory: bloxpackage
         run: |
             "darklua process main.luau bulit.luau"
             "lune bulid bulit.luau"
