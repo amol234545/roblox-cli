@@ -31,10 +31,6 @@ jobs:
         run: |
             "darklua process main.luau bulit.luau"
             "lune bulid bulit.luau"
-      - name: get ver
-        uses: codacy/git-version@2.4.0
-        with:
-          dev-branch: "master"
       - name: Read version file
         uses: actions/github-script@v7
         id: read_file
