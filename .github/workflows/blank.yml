@@ -22,12 +22,11 @@ jobs:
           repository: "LPGhatguy/aftman"
           latest: true
           extract: true
-      - name: Install Aftman and darklua
+      - name: Install Aftman and packages
         run: |
             "./aftman self-install"
             "aftman add seaofvoices/darklua"
-      - name: Download Lune
-        run: "aftman add lune-org/lune"
+            "aftman add lune-org/lune"
       - name: Bulid .EXE
         run: |
             "darklua process main.luau bulit.luau"
