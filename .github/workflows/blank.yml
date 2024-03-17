@@ -34,14 +34,13 @@ jobs:
             "cd bulid"
             "darklua process main.luau bulit.luau"
             "lune bulid bulit.luau"
-            "dir"
       - name: Read version file
         uses: actions/github-script@v7
         id: read_file
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "dir ${{env.GITHUB_WORKSPACE}}"
+      - run: "dir ${{env.GITHUB_WORKSPACE}}\\bulid"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
