@@ -30,7 +30,6 @@ jobs:
         run: |
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
-            - name: Create Release
       - name: Read version file
         uses: actions/github-script@v7
         id: read_file
