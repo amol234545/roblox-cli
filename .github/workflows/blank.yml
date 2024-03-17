@@ -40,12 +40,12 @@ jobs:
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "echo $GITHUB_WORKSPACE"
+      - run: "dir $GITHUB_WORKSPACE"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
           draft: true
           tag: ${{steps.read_file.outputs.result}}
-          artifacts: "${{env.GITHUB_WORKSPACE}}\\bulit.exe"
+          artifacts: "$GITHUB_WORKSPACE\\bulit.exe"
           
         
