@@ -28,9 +28,8 @@ jobs:
             "aftman add seaofvoices/darklua"
             "aftman add lune-org/lune"
       - name: Bulid .EXE
-        working-directory: "${{env.GITHUB_WORKSPACE}}"
         run: |
-            cd ${{env.GITHUB_WORKSPACE}}
+            cd $GITHUB_WORKSPACE
             "mkdir bulid"
             "cd bulid"
             "darklua process main.luau bulit.luau"
@@ -41,7 +40,7 @@ jobs:
         with:
           result-encoding: string
           script: return require("node:fs").readFileSync("version.txt","utf8")
-      - run: "echo ${{env.GITHUB_WORKSPACE}}"
+      - run: "echo $GITHUB_WORKSPACE"
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
