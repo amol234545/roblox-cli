@@ -9,7 +9,7 @@ permissions:
   contents: write
 defaults:
   run:
-    working-directory: "$GITHUB_WORKSPACe"
+    working-directory: "$GITHUB_WORKSPACE"
 jobs:
   # This workflow contains a single job called "build"
   build-win:
