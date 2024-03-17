@@ -36,7 +36,7 @@ jobs:
         id: read_file
         with:
           result-encoding: string
-          script: return require("node:fs"):readFileSync("version.txt","utf8")
+          script: return require("node:fs").readFileSync("version.txt","utf8")
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
