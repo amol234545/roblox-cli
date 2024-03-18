@@ -47,10 +47,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            "mkdir bulid"
-            "cd bulid"
-            "darklua process main.luau bulid\\bulit.luau"
-            "lune bulid bulid\\bulit.luau"
+            "darklua.exe process main.luau bulit.luau"
+            "lune.exe bulid bulit.luau"
       - run: "dir"
           
         
