@@ -44,8 +44,7 @@ jobs:
           draft: true
           tag: ${{steps.read_file.outputs.result}}
       - name: Bulid .EXE
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
             "darklua.exe process main.luau bulit.luau"
             "lune.exe bulid bulit.luau"
